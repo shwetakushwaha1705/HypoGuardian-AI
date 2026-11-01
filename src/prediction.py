@@ -5,10 +5,17 @@ real-time inference on 1-hour historical glucose sequences. Enforces strict inpu
 validation, identical preprocessing, and transparent error reporting without fallback guessing.
 """
 
+import sys
 from datetime import datetime
 import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple, Union
+
+# Ensure project root is in sys.path
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 import joblib
 import numpy as np
 import pandas as pd

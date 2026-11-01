@@ -5,10 +5,17 @@ Features chronological/patient-aware data splitting, strict train-only scaler fi
 class-imbalance weighting, early stopping, and artifact serialization.
 """
 
+import sys
 from datetime import datetime
 import json
 from pathlib import Path
 from typing import Dict, Tuple
+
+# Ensure project root is in sys.path
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 import joblib
 import numpy as np
 import pandas as pd

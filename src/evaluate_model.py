@@ -5,9 +5,16 @@ Computes confusion matrix, sensitivity, specificity, ROC-AUC, and PR-AUC.
 Generates evaluation charts and saves structured results to models/evaluation_results.json.
 """
 
+import sys
 import json
 from pathlib import Path
 from typing import Dict, Tuple
+
+# Ensure project root is in sys.path
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 import joblib
 import matplotlib.pyplot as plt
 import numpy as np

@@ -5,9 +5,16 @@ data upload validation, time-series visualization, LSTM early-warning inference,
 prediction history auditing, model evaluation dashboards, and viva preparation.
 """
 
+import sys
+from pathlib import Path
+
+# Ensure project root directory is in sys.path for Streamlit Cloud and Linux environments
+ROOT_DIR = Path(__file__).resolve().parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 from datetime import datetime
 import json
-from pathlib import Path
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
