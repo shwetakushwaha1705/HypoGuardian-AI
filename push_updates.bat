@@ -1,10 +1,12 @@
 @echo off
 cd /d "%~dp0"
 echo ========================================================
-echo   PUSHING HYPOGUARDIAN AI UPDATES TO GITHUB
+echo   SYNCING AND PUSHING HYPOGUARDIAN AI TO GITHUB
 echo ========================================================
 echo.
-git push origin main
+git push -u origin main --force
 echo.
-echo If the push succeeded, Streamlit Cloud will update automatically.
+echo ========================================================
+echo  All files updated! Streamlit Cloud will now reload.
+echo ========================================================
 pause
