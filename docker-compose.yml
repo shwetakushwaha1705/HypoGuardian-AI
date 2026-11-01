@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  hypoguardian-ai:
+    build: .
+    container_name: hypoguardian_ai_app
+    ports:
+      - "8501:8501"
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1

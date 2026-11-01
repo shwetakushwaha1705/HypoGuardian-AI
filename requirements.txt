@@ -1,0 +1,22 @@
+# HypoGuardian AI: Hypoglycemia Monitoring Using Advanced Deep Learning
+# Pinned and verified package dependencies for local execution and reproduction
+
+# Data processing and numerical computing
+numpy>=1.26.0,<3.0.0
+pandas>=2.1.0,<3.0.0
+scipy>=1.11.0,<2.0.0
+scikit-learn>=1.4.0,<2.0.0
+joblib>=1.3.0
+
+# Deep learning framework
+tensorflow>=2.16.0
+
+# Interactive web dashboard
+streamlit>=1.32.0
+
+# Data visualization
+plotly>=5.18.0
+matplotlib>=3.8.0
+
+# Testing and code quality
+pytest>=8.0.0

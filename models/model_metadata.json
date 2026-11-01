@@ -1,0 +1,30 @@
+{
+  "model_name": "HypoGuardian-LSTM",
+  "model_version": "1.0.0",
+  "training_date": "2026-11-01 15:28:50",
+  "dataset_description": "Synthetic multi-patient continuous glucose monitoring research benchmark",
+  "input_features": [
+    "glucose_mg_dl"
+  ],
+  "input_sequence_length": 12,
+  "expected_sampling_interval_min": 5,
+  "forecast_horizon_min": 30,
+  "forecast_horizon_steps": 6,
+  "target_definition": "At least one reading in next 30 minutes < 70 mg/dL",
+  "hypo_threshold_mg_dl": 70.0,
+  "preprocessing_method": "StandardScaler (mean=0, variance=1) fitted strictly on training partition",
+  "split_strategy": "Chronological split (Train=70%, Val=15%, Test=15%)",
+  "training_samples": 4197,
+  "validation_samples": 900,
+  "test_samples": 900,
+  "class_weights": {
+    "0": 0.5011941724385002,
+    "1": 209.85
+  },
+  "selected_classification_threshold": 0.5,
+  "limitations": [
+    "Trained on research benchmark data; clinical safety not certified.",
+    "Requires continuous 5-minute sampling intervals.",
+    "Predictions are uncalibrated probabilities for academic study only."
+  ]
+}
