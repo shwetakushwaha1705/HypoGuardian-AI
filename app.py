@@ -698,5 +698,46 @@ elif selected_page == "ℹ️ About the Project":
         - **Web Application**: Streamlit
         - **Interactive Plotting**: Plotly Graph Objects & Express
         - **Testing**: Pytest
+
+        ---
+        ### **5. Academic Research Poster**
+        **B.Tech Computer Science & Engineering Capstone Project (AY 2025–26)**  
+        - **Student Researchers**: Shweta Kushwaha (PRN 24070521001) | Aman Rahangdale (PRN 24070521263)  
+        - **Project Guide**: Dr. Umakant Mandawkar  
+        - **Institution**: Symbiosis Institute of Technology, Nagpur • Department of CSE  
         """
     )
+
+    import base64
+    from config import DOCS_DIR
+    poster_pdf_path = DOCS_DIR / "HypoGuardian_AI_Poster.pdf"
+
+    if poster_pdf_path.exists():
+        with open(poster_pdf_path, "rb") as f:
+            pdf_bytes = f.read()
+            b64_pdf = base64.b64encode(pdf_bytes).decode("utf-8")
+
+        st.download_button(
+            label="📥 Download Official Academic Capstone Poster (PDF)",
+            data=pdf_bytes,
+            file_name="HypoGuardian_AI_Capstone_Poster.pdf",
+            mime="application/pdf",
+            type="primary",
+            use_container_width=True,
+            help="Click to download the official print-ready research poster PDF.",
+        )
+
+        st.markdown("#### **Interactive Poster Viewer**")
+        pdf_html = f"""
+        <iframe 
+            src="data:application/pdf;base64,{b64_pdf}" 
+            width="100%" 
+            height="750" 
+            type="application/pdf"
+            style="border: 1px solid #cbd5e1; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);"
+        >
+            <p>Your browser does not support inline PDF viewing. Please use the download button above to view the poster.</p>
+        </iframe>
+        """
+        st.markdown(pdf_html, unsafe_allow_html=True)
+
